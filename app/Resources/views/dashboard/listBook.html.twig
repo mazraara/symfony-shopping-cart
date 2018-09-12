@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <h2 class="display-3">Books List</h2>
+                <a href="{{ path('book_new') }}" class="btn btn-info">Add</a>
+                <table class="table ">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.name }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.price }}</td>
+                            <td>{{ book.category.name }}</td>
+                            <td><a href="{{ path('book_edit',{'id': book.id}) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ path('book_delete',{'id': book.id}) }}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

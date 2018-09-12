@@ -1,0 +1,14 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <div>Name: {{ book.name }}</div>
+            <div>Price: {{ book.price }}</div>
+            <div>Author: {{ book.author }}</div>
+            <hr>
+            <div>Category: <a href="{{ path('category_show',{'id': book.category.id}) }}"
+                              class="btn btn-danger">{{ book.category.name }} </a></div>
+        </div>
+    </div>
+{% endblock %}

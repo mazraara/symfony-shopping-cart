@@ -1,0 +1,32 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="display-3">Books List</h2>
+        <table class="table">
+            <thead class="thead-inverse">
+            <tr>
+                <th>Picture</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Filter by category</th>
+                <th></th>
+            </tr>
+            </thead>
+            {% for item in books %}
+                <tr>
+                    <td><img src="http://placehold.it/50x50" alt="..." class="img-responsive"/></td>
+                    <td><a href="{{ path('book_show',{'id': item.id}) }}">{{ item.name }}</a></td>
+                    <td>{{ item.author }}</td>
+                    <td>{{ item.price }}</td>
+                    <td><a href="{{ path('category_show',{'id': item.category.id }) }}"
+                           class="btn btn-info">{{ item.category.name }}</a></td>
+                    <td><a href="{{ path('cart_add',{'id': item.id }) }}"
+                           class="btn btn-success">Add to cart</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ path('category_list') }}" class="btn btn-danger">All Categories</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'home.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <div>Name: {{ category.name }}</div>
+            <div>Description: {{ category.description }}</div>
+            <div>
+                Books:
+                <table class="table">
+                    {% for item in books %}
+                        <tr>
+                            <td><a href="{{ path('book_show',{'id': item.id}) }}"
+                                   class="btn btn-info">{{ item.name }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

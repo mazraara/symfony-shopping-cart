@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="form-group col">
+            {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            {{ form_row(form.author, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            {{ form_row(form.price, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            {{ form_row(form.category, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col">
+            {{ form_row(form.save, {'attr': {'class': 'btn btn-success btn-block'}}) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

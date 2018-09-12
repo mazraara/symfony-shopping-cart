@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <h2 class="display-3">Category List</h2>
+                <a href="{{ path('category_new') }}" class="btn btn-info">Add</a>
+                <table class="table ">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    {% for item in categories %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.description }}</td>
+                            <td><a href="{{ path('category_edit',{'id': item.id}) }}" class="btn btn-success">Edit</a>
+                                <a href="{{ path('category_delete',{'id': item.id}) }}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
