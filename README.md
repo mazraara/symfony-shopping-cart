@@ -29,7 +29,7 @@ secret: 8PWLg7c2U`
 
 5) Run below command to create the tables
 
-`php bin/console doctrine:schema:update –force`
+`php bin/console doctrine:schema:update –-force`
 
 6) Run below command to load the migration scripts 
 
